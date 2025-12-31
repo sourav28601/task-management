@@ -14,7 +14,6 @@ module.exports = async (req, res, next) => {
         return errorResponseWithoutData(res, "Unauthorized access");
       } else {
         req.user = await User.findOne({token: token});
-        console.log(" req.user --------------", req.user )
       }
       next();
     });
